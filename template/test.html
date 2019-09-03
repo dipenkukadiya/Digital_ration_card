@@ -1,18 +1,19 @@
 
-   {% load static %}
 <html>
 
 <head>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	{% load staticfiles %}
 
 	<link rel="stylesheet" href="{% static 'styles/style.css' %}" >
 	<link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/fontawesome-webfont.woff2' %}">
 	<link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
 	
-	
-	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </head>
@@ -86,7 +87,7 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="" method="GET">
+				<form action="logs" method="GET">
 				<div class="modal-body mx-3">
 					<div class="md-form mb-5">
 						<i class="fa fa-envelope"></i>
@@ -120,7 +121,7 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="" method="GET">
+				<form action="reg" method="GET">
 					<div class="modal-body mx-3">
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
