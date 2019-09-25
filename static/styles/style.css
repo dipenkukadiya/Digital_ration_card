@@ -9,4 +9,15 @@
 }
 .modal-contact {
   align-content:Left;
+ 
+}
+.modal{
+  overflow: auto !important;
+}
+
+#but{
+background-color : blue;
+color: white;
+font-size: 12px;s
+
 }

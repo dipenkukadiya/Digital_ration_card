@@ -13,28 +13,27 @@ function func1()
         //document.getElementById("fam_members").appendChild(document.createElement("br"));
 
         var aadhaar = document.createElement("input");
-        set_attribute(aadhaar, { "type": "text", "class": "form-control mb-2 mr-sm-2", "placeholder": "Enter your Aadhaar Number:", "name" : "aadhaar_"+i});
-        document.getElementById("fam_members").appendChild(aadhaar);
+        set_attribute(aadhaar, { "type": "text",  "class": "form-control", "placeholder": " Aadhaar Number", "name" : "aadhaar_"+i});
+        document.getElementById("fam_members").appendChild(aadhaar); 
 
         var f_name = document.createElement("input");
-        set_attribute(f_name, { "type": "text", "class": "form-control mb-2 mr-sm", "placeholder": "Enter your Full Name", "name" : "f_name_"+i});
+        set_attribute(f_name, { "type": "text", "class": "form-control", "placeholder": " Full Name", "name" : "f_name_"+i});
         document.getElementById("fam_members").appendChild(f_name);
 
         var relation = document.createElement("input");
-        set_attribute(relation, { "type": "text", "class": "form-control mb-2 mr-sm-2", "placeholder": "Enter your relationship", "name" : "relation_"+i});
+        set_attribute(relation, { "type": "text", "class": "form-control", "placeholder": "your relationship", "name" : "relation_"+i});
         document.getElementById("fam_members").appendChild(relation);
 
         var age = document.createElement("input");
-        set_attribute(age, { "type": "number", "class": "form-control mb-2 mr-sm-2", "placeholder": "How old are you?", "name" : "age_"+i});
+        set_attribute(age, { "type": "number", "class": "form-control", "placeholder": "Age ", "name" : "age_"+i});
         document.getElementById("fam_members").appendChild(age);
 
-        var dob = document.createElement("input");
-        set_attribute(dob, { "type": "date", "class": "form-control mb-2 mr-sm-2", "placeholder": "Enter your Date of Birth", "name" : "dob_"+i});
-        document.getElementById("fam_members").appendChild(dob);
-
         var gender = document.createElement("input");
-        set_attribute(gender, { "type": "text", "class": "form-control mb-2 mr-sm-2", "placeholder": "Gender", "name" : "gender_"+i});
+        set_attribute(gender, { "type": "text", "class": "form-control", "placeholder": "Gender", "name" : "gender_"+i});
         document.getElementById("fam_members").appendChild(gender);
+
+
+
 
 
         console.log(dd_value);
@@ -44,6 +43,10 @@ function func1()
             $modal.modal('show');
         }
     }
+
+    var but = document.createElement("input");
+    set_attribute(but, { "type":"button","class": "form-control" , "name":"submit ","value":"submit", "id" : "but"});
+    document.getElementById("fam_members").appendChild(but);
 }
 
 function set_attribute(elem, attrs)

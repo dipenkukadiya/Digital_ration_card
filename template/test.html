@@ -11,11 +11,12 @@
 	<link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'fonts/fontawesome-webfont.woff2' %}">
 	<link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
-	
+
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
 </head>
 <body>
 
@@ -87,16 +88,35 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="logs" method="GET">
+				<form action="logs" method="POST">
 				<div class="modal-body mx-3">
+					
 					<div class="md-form mb-5">
-						<i class="fa fa-envelope"></i>
+						
+						<input type="text" id="defaultForm-ino" class="form-control validate"
+							placeholder="ID">
+					</div>
+
+					<div class="md-form mb-5">
+						
+						<input type="text" id="defaultForm-rno" class="form-control validate"
+							placeholder="Ration Card No.">
+					</div>
+					
+					<div class="md-form mb-5">
+						
+						<input type="text" id="defaultForm-lno" class="form-control validate"
+							placeholder="License No.">
+					</div>
+
+					<div class="md-form mb-5">
+					
 						<input type="email" id="defaultForm-email" class="form-control validate"
-							placeholder="Your Email">
+							placeholder="E-mail">
 					</div>
 
 					<div class="md-form mb-4">
-						<i class="fa fa-lock"></i>
+						
 						<input type="password" id="defaultForm-pass" class="form-control validate"
 							placeholder="Your Password">
 					</div>
@@ -121,7 +141,7 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="reg" method="GET">
+				<form action="reg" method="POST">
 					<div class="modal-body mx-3">
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
@@ -149,77 +169,77 @@
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
 
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="First Name">
+							<input type="text" id="orangeForm-name1" class="form-control validate" placeholder="First Name">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="Last Name">
+							<input type="text" id="orangeForm-name2" class="form-control validate" placeholder="Last Name">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate"
+							<input type="text" id="orangeForm-name3" class="form-control validate"
 								placeholder="E-mail Address">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate"
+							<input type="text" id="orangeForm-name4" class="form-control validate"
 								placeholder="Date Of Birth">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate"
+							<input type="text" id="orangeForm-name5" class="form-control validate"
 								placeholder="Contact Number">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="State">
+							<input type="text" id="orangeForm-name6" class="form-control validate" placeholder="State">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="District">
+							<input type="text" id="orangeForm-name7" class="form-control validate" placeholder="District">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="Taluka">
+							<input type="text" id="orangeForm-name8" class="form-control validate" placeholder="Taluka">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="Pincode">
+							<input type="text" id="orangeForm-name9" class="form-control validate" placeholder="Pincode">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate"
+							<input type="text" id="orangeForm-name10" class="form-control validate"
 								placeholder="City/Village">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="Address">
+							<input type="text" id="orangeForm-name11" class="form-control validate" placeholder="Address">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="Shop No">
+							<input type="text" id="orangeForm-name12" class="form-control validate" placeholder="Shop No">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate"
+							<input type="text" id="orangeForm-name13" class="form-control validate"
 								placeholder="Shop Address">
 						</div>
 
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate"
+							<input type="text" id="orangeForm-name14" class="form-control validate"
 								placeholder="Aadharcard Number">
 						</div>
 
@@ -263,7 +283,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile" name="filename">
+									<input type="file" class="custom-file-input" id="customFile1" name="filename">
 									<label class="custom-file-label" for="customFile">Passbook size photo</label>
 								</div>
 							</div>
@@ -272,7 +292,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile" name="filename">
+									<input type="file" class="custom-file-input" id="customFile2" name="filename">
 									<label class="custom-file-label" for="customFile">Income Certificate</label>
 								</div>
 							</div>
@@ -281,7 +301,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile" name="filename">
+									<input type="file" class="custom-file-input" id="customFile3" name="filename">
 									<label class="custom-file-label" for="customFile">Residential Certificate</label>
 								</div>
 							</div>
@@ -290,7 +310,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile" name="filename">
+									<input type="file" class="custom-file-input" id="customFile4" name="filename">
 									<label class="custom-file-label" for="customFile"> Cast Certificate</label>
 								</div>
 							</div>
@@ -299,7 +319,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile" name="filename">
+									<input type="file" class="custom-file-input" id="customFile5" name="filename">
 									<label class="custom-file-label" for="customFile">Bank Passbook </label>
 								</div>
 							</div>
@@ -308,7 +328,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile" name="filename">
+									<input type="file" class="custom-file-input" id="customFile6" name="filename">
 									<label class="custom-file-label" for="customFile">Gas-Agency Certificate</label>
 								</div>
 							</div>
@@ -317,14 +337,14 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile" name="filename">
+									<input type="file" class="custom-file-input" id="customFile7" name="filename">
 									<label class="custom-file-label" for="customFile">Letest Electricity Bill</label>
 								</div>
 							</div>
 						</div>
 						<div class="md-form mb-5">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name" class="form-control validate" placeholder="Password">
+							<input type="text" id="orangeForm-name	" class="form-control validate" placeholder="Password">
 						</div>
 					</div>
 
@@ -337,9 +357,8 @@
 	</div>
 
 	<!-- Family Modal -->
-	<div class="modal fade" id="modalFamily" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+	<div class="modal fade " id="modalFamily" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="width: 100%">
+		<div class="modal-dialog modal-lg" role="document" style="max-width:80%;">
 			<div class="modal-content">
 				<div class="modal-header text-center">
 					<h4 class="modal-title w-100 font-weight-bold">Family Member Details</h4>
