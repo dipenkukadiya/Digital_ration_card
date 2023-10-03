@@ -1,0 +1,211 @@
+
+
+{% load static %}
+
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{% static 'images/favicon.ico'  %}" type="image/x-icon">
+
+	<link rel="stylesheet" href="{% static 'styles/pro.css' %}" >
+	<link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/fontawesome-webfont.woff2' %}">
+ 
+  <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/bootstrapp.min.css' %}">
+
+  
+	
+	
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/star-rating.min.js' %}"></script>
+  <style>
+		
+
+
+			.dropdown .dropbtn {
+			  font-size: 16px;  
+			  border: none;
+			  outline: none;
+			  color: white;
+			  padding: 14px 16px;
+			  background-color: inherit;
+			  font-family: inherit;
+			  margin: 0;
+			}
+			
+			
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #f9f9f9;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			}
+			
+			.dropdown-content a {
+			  float: none;
+			  color: black;
+			  padding: 12px 16px;
+			  text-decoration: none;
+			  display: block;
+			  text-align: left;
+			}
+			
+			.dropdown-content a:hover {
+			  background-color: #ddd;
+			}
+			
+			.dropdown:hover .dropdown-content {
+			  display: block;
+			}
+					</style>
+
+
+
+	<script>
+		$(document).ready(function() {
+		jQuery("#div2 ul li").append("<hr />");
+		});
+		
+	</script>
+</head>
+
+<body style="background-image: linear-gradient(160deg, orange,white 30%, green);">
+  
+
+  <nav class="navbar navbar-expand-md bg-primary navbar-dark" style="background-color:#0b1f35!important;">
+    <img src="{% static 'images/logo.png' %}" class="logo">
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse" >
+        <div class="navbar-nav ml-auto" style="float: right;">
+          <a href="http://127.0.0.1:8000/home/" class="nav-item nav-link" style="font-size:20px; margin-right: 40px; color: mediumvioletred;font-size:20; font-family: Arial, Helvetica, sans-serif;"
+              onMouseOver="this.style.color='blue'"
+            onMouseOut="this.style.color='mediumvioletred'"><b>Update</b></a>
+            <a href="http://127.0.0.1:8000/tokon_home/" class="nav-item nav-link"
+					style="font-size:20px; margin-right: 40px; color:mediumvioletred;font-size:20; font-family:
+					Arial, Helvetica, sans-serif; " onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Take A Token</b></a>
+            <div class="dropdown">
+                <button class="dropbtn" style="font-size:20px; margin-right:40px ;color:mediumvioletred;font-family: Arial, Helvetica, sans-serif; padding-right: 5px;padding-top: 5px;padding-left: 5px;padding-bottom: 5px;" onMouseOver="this.style.color='blue'"
+                onMouseOut="this.style.color='mediumvioletred'"><b>Ration</b>
+                </button>
+                <div class="dropdown-content">
+                  
+                  <a href="http://127.0.0.1:8000/ration_record/" class="nav-item nav-link"
+                  style="font-size:17px; color:red ;font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue'"
+                  onMouseOut="this.style.color='red'"><b>Ration Record</b></a>
+              
+                  <a href="http://127.0.0.1:8000/ration/" class="nav-item nav-link"
+                    style="font-size:17px; color:red; font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue'"
+                    onMouseOut="this.style.color='red'"><b>Ration Check</b></a>
+                </div>
+              </div>
+          <a href="http://127.0.0.1:8000/profile/" class="nav-item nav-link" style="font-size: 20px; margin-right: 40px; color:mediumvioletred;font-family: Arial, Helvetica, sans-serif;"
+              onMouseOver="this.style.color='blue'"
+              onMouseOut="this.style.color='mediumvioletred'"><b>Profile</b></a>
+          <a href="http://127.0.0.1:8000/feedback/" class="nav-item nav-link" style="font-size: 20px; margin-right: 40px; color: mediumvioletred;font-family: Arial, Helvetica, sans-serif;"
+                onMouseOver="this.style.color='blue'"
+                onMouseOut="this.style.color='mediumvioletred'"><b>Feedback</b></a>
+        </div>
+      </div>
+  </nav>
+  <center>
+    <div><h2 style="font-family: Arial, Helvetica, sans-serif; color:blue;"> Your Ration Data History</h2></div>
+    
+  
+  <div class="container emp-profile">
+    <form method="GET">
+        <div class="row">
+           
+<div class="col-md-8" style="margin-left: 200px; margin-top: 100px;">
+<table class="table">
+<thead class="thead-dark">
+
+<tr>
+  <td style="font-family: Arial, Helvetica, sans-serif; color:black;">Date:</td>
+  <td style="font-family: Arial, Helvetica, sans-serif; color:black;">{{hist.0.datee}}</td>
+</tr>
+<tr>
+  <td style="font-family: Arial, Helvetica, sans-serif; color:black;">Total Bill:</td>
+  <td style="font-family: Arial, Helvetica, sans-serif; color:black;">{{hist.0.bill}} rs</td>
+</tr>
+<tr>
+<th scope="col" style="font-family: Arial, Helvetica, sans-serif; color:whitesmoke;">product</th>
+<th scope="col" style="font-family: Arial, Helvetica, sans-serif; color:whitesmoke;">weight</th>
+<th scope="col" style="font-family: Arial, Helvetica, sans-serif; color:whitesmoke;">price</th>
+
+</tr>
+</thead>
+
+<tbody>
+
+
+{%for i in hist%}
+  {%ifnotequal i.datee hist.0.datee%}
+     
+      </tbody>
+      </table>
+      <table class="table">
+      <thead class="thead-dark">
+
+      <tr>
+        <td style="font-family: Arial, Helvetica, sans-serif; color:black;">Date:</td>
+        <td style="font-family: Arial, Helvetica, sans-serif; color:black;">{{i.datee}}</td>
+      </tr>
+      <tr>
+        <td style="font-family: Arial, Helvetica, sans-serif; color:black;">Total Bill:</td>
+        <td style="font-family: Arial, Helvetica, sans-serif; color:black;">{{i.bill}} rs</td>
+      </tr>
+      <tr>
+      <th scope="col" style="font-family: Arial, Helvetica, sans-serif; color:whitesmoke;">product</th>
+      <th scope="col" style="font-family: Arial, Helvetica, sans-serif; color:whitesmoke;">weight</th>
+      <th scope="col" style="font-family: Arial, Helvetica, sans-serif; color:whitesmoke;"> price</th>
+
+      </tr>
+      </thead>
+      
+      <tbody>
+      
+  {%endifnotequal%}
+      <tr>
+        <th scope="row">{{i.product}}</th>
+        <td>{{i.weight}} kg</td>
+        <td>{{i.price}} rs</td>
+      </tr> 
+      
+{%endfor%}
+
+      </tbody>
+      </table>
+                      
+                    </div>
+                </div>
+    </form>           
+</div>
+
+
+
+  </center>
+  <footer class="bg-dark foot" style="margin-top: 250px;">
+      <div class="footer-copyright text-center py-1 text-white" ><i class="material-icons" style="font-size:15px; color: orange;">&#xe0be;&nbsp; </i><label style="color: orange; font-family: Arial, Helvetica, sans-serif;"> name.company@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</label><i class="material-icons" style="font-size:15px; color: orange;">&#xe0b0;&nbsp; </i><label style="color: orange; font-family: Arial, Helvetica, sans-serif;">1234567890</label></div>
+      <!--<div class="footer-copyright text-center py-1 text-white">contact :- 1234567890s</div>-->
+      <div class="footer-copyright text-center py-1 text-white"><label style="font-family: Arial, Helvetica, sans-serif; color: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright Reserved ©2019 </label></div>
+    </footer>
+
+  
+  </body>
+
+</html>
+
+

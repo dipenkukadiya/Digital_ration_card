@@ -1,0 +1,609 @@
+{% load static %}
+
+<html>
+
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="{% static 'images/favicon.ico'  %}" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'styles/alg.css' %}">
+	<link rel="stylesheet" href="{% static 'styles/pro.css' %}">
+
+
+	<link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'styles/4.3bootstrap.min.css' %}">
+
+    <script type="text/javascript" src="{% static 'js/load.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jspdf.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+	
+
+	<script type="text/javascript" src="{% static 'js/star-rating.min.js' %}"></script>
+	<style>
+		.dropdown .dropbtn {
+			font-size: 16px;
+			border: none;
+			outline: none;
+			color: white;
+			padding: 14px 16px;
+			background-color: inherit;
+			font-family: inherit;
+			margin: 0;
+		}
+
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+
+		.dropdown-content a {
+			float: none;
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+
+		.dropdown-content a:hover {
+			background-color: #ddd;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+.card{
+width: 320px;
+height: 190px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective:600px;
+
+}
+
+.card__part{
+  box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+  position: absolute;
+z-index: 1000;
+  left: 0;
+  display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-image: linear-gradient(160deg, orange,white 30%, green); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__front{
+  padding: 18px;
+-webkit-transform: rotateY(0);
+-moz-transform: rotateY(0);
+}
+
+.card__back {
+  padding: 18px 0;
+-webkit-transform: rotateY(-180deg);
+-moz-transform: rotateY(-180deg);
+}
+
+.card__black-line {
+    margin-top: 5px;
+    height: 38px;
+    background-color: #303030;
+}
+
+.card__logo {
+    height: 16px;
+}
+
+.card__front-logo{
+      position: absolute;
+    top: 18px;
+    right: 18px;
+}
+.card__square {
+    border-radius: 5px;
+    height: 30px;
+}
+
+.card_numer {
+    display: block;
+    width: 100%;
+    word-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card__space-75 {
+    width: 75%;
+    float: left;
+}
+
+.card__space-25 {
+    width: 25%;
+    float: left;
+}
+
+.card__label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 1px;
+}
+
+.card__info {
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card__back-content {
+    padding: 15px 15px 0;
+}
+.card__secret--last {
+    color: #303030;
+    text-align: right;
+    margin: 0;
+    font-size: 14px;
+}
+
+.card__secret {
+    padding: 5px 12px;
+    background-color: #fff;
+    position:relative;
+}
+
+.card__secret:before{
+  content:'';
+  position: absolute;
+top: -3px;
+left: -3px;
+height: calc(100% + 6px);
+width: calc(100% - 42px);
+border-radius: 4px;
+  background: repeating-linear-gradient(45deg, #ededed, #ededed 5px, #f9f9f9 5px, #f9f9f9 10px);
+}
+
+.card__back-logo {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.card__back-square {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.card:hover .card__front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+
+}
+
+.card:hover .card__back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
+.btttn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+	</style>
+
+	
+ 
+	
+
+
+</head>
+
+<body style="background-image: linear-gradient(160deg, orange,white 30%, green);">
+	<nav class="navbar navbar-expand-md bg-primary navbar-dark"
+		style="background-color:#0b1f35!important;padding-left: 10px;padding-right: 10px;">
+
+		<img src="{% static 'images/logo.png' %}" class="logo">
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarCollapse" >
+			<div class="navbar-nav ml-auto " style="float: right;">
+					<a href="http://127.0.0.1:8000/home/" class="nav-item nav-link"
+					style="font-size:20px; margin-right: 40px; color:mediumvioletred;font-size:20; font-family: 
+					Arial, Helvetica, sans-serif; " onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Update</b></a>
+					
+
+					<a href="http://127.0.0.1:8000/tokon_home/" class="nav-item nav-link"
+					style="font-size:20px; margin-right: 40px; color:mediumvioletred;font-size:20; font-family:
+					Arial, Helvetica, sans-serif; " onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Take A Token</b></a>
+				
+				<div class="dropdown">
+					<button class="dropbtn" style="font-size:20px;font-family: Arial, Helvetica, sans-serif; margin-right:40px ;color:mediumvioletred;padding-right: 5px;padding-top: 5px;padding-left: 5px;padding-bottom: 5px;" onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Ration</b>
+						
+					</button>
+					<div class="dropdown-content">
+						
+						<a href="http://127.0.0.1:8000/ration_record/" class="nav-item nav-link" 
+						style="font-size:17px; color:red ; font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue' " 
+						onMouseOut="this.style.color='red'"><b>Ration Record</b></a>
+				
+						<a href="http://127.0.0.1:8000/ration/" class="nav-item nav-link"
+							style="font-size:17px; color:red; font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue'"
+							onMouseOut="this.style.color='red'"><b>Ration Check</b></a>
+					</div>
+				</div>
+				<a href="http://127.0.0.1:8000/profile/" class="nav-item nav-link"
+					style="font-size: 20px; margin-right: 40px; color: mediumvioletred; font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Profile</b></a>
+				<a href="http://127.0.0.1:8000/feedback/" class="nav-item nav-link"
+					style="font-size: 20px; margin-right: 40px; color: mediumvioletred; font-family: Arial, Helvetica, sans-serif;"  onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Feedback</b></a>
+				</div>
+
+		</div>
+	</nav>
+
+
+	<div class="container emp-profile" style="width: 860px; padding-bottom: 15px;">
+		<form method="post">
+			<!--<div class="row" style="margin-bottom: 325px;">
+				<div>
+					<div class="profile-img">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+							alt="photo" />
+					</div>
+				</div> -->
+				<div class="col-md-8">
+					<div class="profile-head">
+						<h4 style="color: darkred; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+							<b>Details About :&nbsp{{register.userselection}}&nbsp;{{register.firstname}}&nbsp;{{ register.lastname}}</b>
+						</h4>
+						<button type="button" style="background-color: DodgerBlue; color: white; font-size:20px;"  id="create_pdf">Download Card</button>
+						{%if register.userselection == 'customer'%}
+						<ul class="nav nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+									aria-selected="true" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">About Me</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+									aria-selected="false" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">Family Info</a>
+							</li>
+							<li class="nav-items">
+								<a class="nav-link" id="card-tab" data-toggle="tab" href="#card" role="tab" aria-controls="card"
+									aria-selected="false" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">Card</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="http://127.0.0.1:8000" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">logout</a>
+							</li>
+						</ul>
+						{%endif%}
+						{%if register.userselection == 'dealer'%}
+
+						<ul class="nav nav-tabs" id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+										aria-selected="true" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">About Me</a>
+								</li>
+							<!--	<li class="nav-item">
+									<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+										aria-selected="false" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">Family Info</a>
+								</li> -->
+								<li class="nav-items">
+								<a class="nav-link" id="card-tab" data-toggle="tab" href="#card" role="tab" aria-controls="card"
+									aria-selected="false" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">Card</a>
+							</li>
+								<li class="nav-item">
+									<a class="nav-link" href="http://127.0.0.1:8000" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">logout</a>
+								</li>
+							</ul>
+							{%endif%}
+
+
+					</div>
+
+					<div class="tab-content profile-tab" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							<table border="2px" cellpadding="12px" width="100%" ;>
+								{%if register.userselection == 'customer'%}
+								
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">Ration&nbsp;&nbsp;no.</th>
+									<td style="font-family: fantasy;">{{ register.id }}</td>
+								</tr>
+								{% endif%}
+
+								{%if register.userselection == 'dealer'%}
+								
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">License&nbsp;&nbsp;no.</th>
+									<td style="font-family: fantasy;">{{ register.id }}</td>
+								</tr>
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">Shop&nbsp;&nbsp;no.</th>
+									<td style="font-family: fantasy;">{{ register.shopno }}</td>
+								</tr>								
+									{% endif%}
+
+								<tr>
+									<th  style="font-family:  Arial, Helvetica, sans-serif;">Name</th>
+									<td style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.firstname}}&nbsp;&nbsp;{{ register.lastname}}</td>
+								</tr>
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">Email</th>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.emailid }}</td>
+								</tr>
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">Phone </th>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.contactno }}</td>
+								</tr>
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">Date Of Birth</th>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.dob }}</td>
+								</tr>
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">Taluka</th>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.taluka }}</td>
+								</tr>
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">City</th>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.city }}</td>
+								</tr>
+								<tr>
+									<th style="font-family:  Arial, Helvetica, sans-serif;">Pincode</th>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.pincode }}</td>
+								</tr>
+								<tr>
+									<th  style="font-family:  Arial, Helvetica, sans-serif;">Address</th>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ register.address }}</td>
+								</tr>
+							</table>
+						
+						</div>
+
+						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+							<table style="border: 2px" ; cellpadding="8px" width="100%">
+								<tr>
+									<th  style="font-family:  Arial, Helvetica, sans-serif;"> Aadhaar </th>
+									<th  style="font-family:  Arial, Helvetica, sans-serif;"> Name</th>
+									<th  style="font-family:  Arial, Helvetica, sans-serif;"> Relation</th>
+									<th  style="font-family:  Arial, Helvetica, sans-serif;"> Age</th>
+									<th  style="font-family:  Arial, Helvetica, sans-serif;"> Gender</th>
+								</tr>
+							{% for t in fam %}
+								<tr>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{t.aadhaar}}</td>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{t.f_name}}</td>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{t.relation}}</td>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{t.age}}</td>
+									<td  style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{t.gender}}</td>
+								</tr>
+							{% endfor %}
+							</table>
+
+						</div>
+						
+							<div class="tab-pane fade " id="card" role="tabpanel" aria-labelledby="card-tab" >
+								<div id='content'>
+									{%if register.userselection == 'customer'%}
+									
+
+									<div class="card "  style="margin-left: 200px;" >
+									<div class="card__front card__part" style="background-image: linear-gradient(160deg, orange,white 30%, green);">
+									<p style="margin-top: -20px; margin-bottom: 0px; float:right"><b>{{register.userselection}} Identification</b></p>
+										<img class="card__front-square card__square" style="width :64px ; height:40px;" src="{% static 'images/logo.png' %} ">
+										<p class="card_numer" style="color:black">{{register.aadharcard}}</p>
+										<div class="card__space-75">
+										<span class="card__label"style="color:black ;font-size:12px;" >Card holder </span>
+										<p class="card__info" style="color:black">{{ register.firstname}}&nbsp;&nbsp;{{ register.lastname}}</p>
+										</div>
+										<div class="card__space-25">
+										<span class="card__label" style="color:black; font-size:12px; margin-left:-10px;">Ration No.</span>
+												<p class="card__info" style="color:black">{{ register.id }}</p>
+										</div>
+								</div>
+								</div>
+
+									<div class="card__back card__part">
+										THANK YOU
+										<div class="card__back-content">
+										</div>
+									</div>
+								</div>
+
+							</div>
+								
+								{% endif%}
+								{%if register.userselection == 'dealer'%}
+
+								<div class="card"  style="margin-left: 200px;" >
+								  <div class="card__front card__part" style="background-image: linear-gradient(160deg, orange,white 30%, green);">
+								  <p style="margin-top: -20px; margin-bottom: 0px;"><b>{{register.userselection}} Identification</b></p>
+									<img class="card__front-square card__square" style="width :64px ; height:40px;" src="{% static 'images/logo.png' %} ">
+									<p class="card_numer" style="color:black">{{register.aadharcard}}</p>
+									<div class="card__space-75">
+									  <span class="card__label"style="color:black ;font-size:12px;" >Card holder </span>
+									  <p class="card__info" style="color:black">{{ register.firstname}}&nbsp;&nbsp;{{ register.lastname}}</p>
+									</div>
+									<div class="card__space-25">
+									  <span class="card__label" style="color:black; font-size:12px; margin-left:-10px;">License No.</span>
+											<p class="card__info" style="color:black">{{ register.id }}</p>
+									</div>
+								  </div>
+
+								  <div class="card__back card__part">
+									THANK YOU
+									<div class="card__back-content">
+									  </div>
+									</div>
+								  </div>
+
+								</div>
+								
+								{% endif%}
+							</div>
+								
+						
+					</div>
+				</div>
+
+			</div>
+
+		</form>
+	</div>
+	<footer  class="bg-dark foot" style="margin-top: 300px ;">
+			<div class="footer-copyright text-center py-1 text-white"><i class="material-icons" style="font-size:15px; color: orange ;">&#xe0be;&nbsp; </i> <label style="font-family: Arial, Helvetica, sans-serif; color: orange;">name.company@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</label><i class="material-icons" style="font-size:15px; color: orange;">&#xe0b0;&nbsp; </i> <label style="font-family: Arial, Helvetica, sans-serif; color: orange;">1234567890</label></div>
+			 <!--<div class="footer-copyright text-center py-1 text-white">contact :- 1234567890s</div>-->
+			<div class="footer-copyright text-center py-1 text-white" style="color: orange;"><label style="color: orange; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright Reserved ©2019</label></div>
+		</footer>
+
+
+<script>  
+    (function () {  
+		console.log("hello");
+        var  
+         form = $('#card'),  
+         cache_width = form.width(),  
+         a4 = [595.28, 841.89]; // for a4 size paper width and height  
+
+        $('#create_pdf').on('click', function () {  
+			console.log("clicked");
+            $('#content').scrollTop(0);  
+            createPDF();  
+        });  
+        //create pdf  
+        function createPDF() {  
+			console.log("create");
+            getCanvas().then(function (canvas) {  
+                var  
+                 img = canvas.toDataURL("image/png"),  
+                 doc = new jsPDF({  
+                     unit: 'px',  
+                     format: 'a4'  
+                 });  
+                doc.addImage(img, 'JPEG', 20, 20);  
+                doc.save('ration.pdf');  
+                form.width(cache_width);  
+            });  
+        }    
+
+        // create canvas object  
+        function getCanvas() {  
+            form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');  
+            return html2canvas(form, {  
+                imageTimeout: 2000,  
+                removeContainer: true  
+            });  
+        }  
+
+    }());  
+</script>  
+
+<script>  
+    /* 
+ * jQuery helper plugin for examples and tests 
+ */  
+    (function ($) {  
+        $.fn.html2canvas = function (options) {  
+            var date = new Date(),  
+            $message = null,  
+            timeoutTimer = false,  
+            timer = date.getTime();  
+            html2canvas.logging = options && options.logging;  
+            html2canvas.Preload(this[0], $.extend({  
+                complete: function (images) {  
+                    var queue = html2canvas.Parse(this[0], images, options),  
+                    $canvas = $(html2canvas.Renderer(queue, options)),  
+                    finishTime = new Date();  
+
+                    $canvas.css({ position: 'absolute', left: 0, top: 0 }).appendTo(document.body);  
+                    $canvas.siblings().toggle();  
+
+                    $(window).click(function () {  
+                        if (!$canvas.is(':visible')) {  
+                            $canvas.toggle().siblings().toggle();  
+                            throwMessage("Canvas Render visible");  
+                        } else {  
+                            $canvas.siblings().toggle();  
+                            $canvas.toggle();  
+                            throwMessage("Canvas Render hidden");  
+                        }  
+                    });  
+                    throwMessage('Screenshot created in ' + ((finishTime.getTime() - timer) / 1000) + " seconds<br />", 4000);  
+                }  
+            }, options));  
+
+            function throwMessage(msg, duration) {  
+                window.clearTimeout(timeoutTimer);  
+                timeoutTimer = window.setTimeout(function () {  
+                    $message.fadeOut(function () {  
+                        $message.remove();  
+                    });  
+                }, duration || 2000);  
+                if ($message)  
+                    $message.remove();  
+                $message = $('<div ></div>').html(msg).css({  
+                    margin: 0,  
+                    padding: 10,  
+                    background: "#000",  
+                    opacity: 0.7,  
+                    position: "fixed",  
+                    top: 10,  
+                    right: 10,  
+                    fontFamily: 'Tahoma',  
+                    color: '#fff',  
+                    fontSize: 12,  
+                    borderRadius: 12,  
+                    width: 'auto',  
+                    height: 'auto',  
+                    textAlign: 'center',  
+                    textDecoration: 'none'  
+                }).hide().fadeIn().appendTo('.card');  
+            }  
+        };  
+    })(jQuery);  
+
+</script> 
+
+</body>
+
+</html>

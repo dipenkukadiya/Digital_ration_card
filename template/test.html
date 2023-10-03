@@ -1,39 +1,51 @@
-
+<!DOCTYPE html>
 <html>
 
 <head>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	{% load staticfiles %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'fonts/fontawesome-webfont.woff2' %}">
 
 	<link rel="stylesheet" href="{% static 'styles/style.css' %}" >
+	
 	<link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
-	<link rel="stylesheet" href="{% static 'fonts/fontawesome-webfont.woff2' %}">
 	<link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+	
 
+
+	<script type="text/javascript" src="{% static 'js/disable.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
 
+
+	<link rel="icon" href="{% static 'images/favicon.ico'  %}" type="image/x-icon">
+	
+	
+	
+	
+
 </head>
 <body>
+	
 
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-		<img src="{% static 'images/logo.png' %}" class="logo">
+		<img src="{% static 'images/logo.png' %}" class="logo" style="margin-left: 40px;  margin-top: 10px;">
 		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ml-auto">
-				<a href="#" class="nav-item nav-link" style="font-size: 30px; margin-right: 100px; color: white;"
+				<a href= "#" class="nav-item nav-link" style="font-size: 40px; font-family:Arial, Helvetica, sans-serif;  margin-right: 100px; color:darkgoldenrod;"
 					data-toggle="modal" data-target="#modalRegisterForm" onMouseOver="this.style.color='blue'"
-					onMouseOut="this.style.color='white'">Registration</a>
-				<a href="#" class="nav-item nav-link" style="font-size: 30px; margin-right: 40px; color: white;"
+					onMouseOut="this.style.color='darkgoldenrod'">Registration</a>
+				<a href= "#" class="nav-item nav-link" style="font-size: 40px; margin-right: 40px; color:darkgoldenrod; font-family: Arial, Helvetica, sans-serif;"
 					data-toggle="modal" data-target="#modalLoginForm" onMouseOver="this.style.color='blue'"
-					onMouseOut="this.style.color='white'">Login</a>
+					onMouseOut="this.style.color='darkgoldenrod'">Login</a>
 			</div>
 		</div>
 	</nav>
@@ -54,10 +66,10 @@
 				<img src="{% static 'images/1st.jpg' %}" class="img-fluid" alt="Los Angeles">
 			</div>
 			<div class="carousel-item">
-				<img src="{% static 'images/2nd.jpg' %}" class="img-fluid" alt="Chicago">
+				<img src="{% static 'images/1st.jpg' %}" class="img-fluid" alt="Chicago">
 			</div>
 			<div class="carousel-item">
-				<img src="{% static 'images/3rd.jpg' %}" class="img-fluid" alt="New York">
+				<img src="{% static 'images/1st.jpg' %}" class="img-fluid" alt="New York">
 			</div>
 		</div>
 
@@ -70,12 +82,11 @@
 		</a>
 	</div>
 
-
-	<footer class="bg-dark ">
-		<div class="footer-copyright text-center py-3 text-white">E-mail :- name.company@gmail.com</div>
-		<div class="footer-copyright text-center py-3 text-white">contact :- 1234567890</div>
-		<div class="footer-copyright text-center py-3 text-white">Copyright ©2019</div>
-	</footer>
+	<footer  class="bg-dark foot">
+			<div class="footer-copyright text-center py-1 text-white"><i class="material-icons" style="font-size:15px; color: orange ;">&#xe0be;&nbsp; </i> <label style="font-family: Arial, Helvetica, sans-serif; color: orange;">name.company@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</label><i class="material-icons" style="font-size:15px; color: orange;">&#xe0b0;&nbsp; </i> <label style="font-family: Arial, Helvetica, sans-serif; color: orange;">1234567890</label></div>
+			 <!--<div class="footer-copyright text-center py-1 text-white">contact :- 1234567890s</div>-->
+			<div class="footer-copyright text-center py-1 text-white" style="color: orange;"><label style="color: orange; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright Reserved ©2019</label></div>
+		</footer>
 
 	<!-- Login Modal -->
 	<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -83,47 +94,50 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header text-center">
-					<h4 class="modal-title w-100 font-weight-bold">Login</h4>
+					<h4 class="modal-title w-100 font-weight-bold" style="font-family: Arial, Helvetica, sans-serif; color: navy;"><b>Login</b></h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="logs" method="POST">
+				<form action="/login_submit/" method="POST">
+					{% csrf_token %}
+			
 				<div class="modal-body mx-3">
 					
-					<div class="md-form mb-5">
-						
-						<input type="text" id="defaultForm-ino" class="form-control validate"
-							placeholder="ID">
-					</div>
-
-					<div class="md-form mb-5">
-						
-						<input type="text" id="defaultForm-rno" class="form-control validate"
+				
+					<div class="md-form mb-4">
+						<p style="color: firebrick;">For Customer...</p>
+						<input type="text" id="rationcardno" class="form-control validate" name="rationcardno" minlength="6" maxlength="6" pattern="[0-9]{6}"
 							placeholder="Ration Card No.">
 					</div>
 					
-					<div class="md-form mb-5">
-						
-						<input type="text" id="defaultForm-lno" class="form-control validate"
-							placeholder="License No.">
-					</div>
-
-					<div class="md-form mb-5">
-					
-						<input type="email" id="defaultForm-email" class="form-control validate"
-							placeholder="E-mail">
+					<div class="md-form mb-4">
+						<p style="color: firebrick;">For Dealer...</p>
+						<input type="text" id="licenseno" class="form-control validate" name="licenseno" minlength="6" maxlength="6"pattern="[0-9]{6}"
+							placeholder="License No."	>
 					</div>
 
 					<div class="md-form mb-4">
+					
+						<input type="email" id="emailidd" class="form-control validate" name="emailidd"
+							placeholder="E-mail" required>
+					</div>
+ 
+					<div class="md-form mb-4">
 						
-						<input type="password" id="defaultForm-pass" class="form-control validate"
-							placeholder="Your Password">
+						<input type="password" id="passwordd" class="form-control validate" name="passwordd" pattern="{8}" minlength="8" maxlength="8"
+							placeholder="Your Password" required> 
 					</div>
 
 				</div>
+				{% for message in message %}
+						<div class="alert alert-success">
+							<a class="close" href="#" data-dismiss="alert">x</a>
+							{{ message }}
+						</div>
+					{% endfor %} 
 				<div class="modal-footer d-flex justify-content-center">
-					<button class="btn btn-default btn-primary">Login</button>
+					<input type="submit"  class="btn btn-default btn-primary" style="font-size: x-large; font-family: Arial, Helvetica, sans-serif;" name="login" value="Log-in">
 				</div>
 			    </form>
 			</div>
@@ -136,116 +150,132 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header text-center">
-					<h4 class="modal-title w-100 font-weight-bold">Register</h4>
+					<h4 class="modal-title w-100 font-weight-bold" style="font-family: Arial, Helvetica, sans-serif; color: navy;"><b>Registration</b></h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="reg" method="POST">
+				<form action="/register_submit/" method="POST" id="regis">
+					{% csrf_token %}
+
 					<div class="modal-body mx-3">
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<label class="form-check-label"> <b> User : &nbsp;&nbsp;</b> </label>
+							<label class="form-check-label" style="font-family: Arial, Helvetica, sans-serif; font-size:large;" aria-required="trues"> <b> User : &nbsp;&nbsp;</b> </label>
 							<div class="form-check-inline">
-								<label class="form-check-label" for="radio1">
-									<input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1"
-										checked>Customer
+								<label class="form-check-label" for="radio1" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">
+									<input type="radio" class="form-check-input" id="radio1" name="userselection" value="customer" 
+									onclick="customer()" required>Customer
 								</label>
 							</div>
 							<div class="form-check-inline">
-								<label class="form-check-label" for="radio2">
-									<input type="radio" class="form-check-input" id="radio2" name="optradio"
-										value="option2">Dealer
-								</label>
-							</div>
-							<div class="form-check-inline">
-								<label class="form-check-label">
-									<input type="radio" class="form-check-input" id="radio3" name="optradio"
-										value="option3">Admin
+								<label class="form-check-label" for="radio2" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">
+									<input type="radio" class="form-check-input" id="radio2" name="userselection" value="dealer" 
+									 onclick="dealer()" required>Dealer
 								</label>
 							</div>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-
-							<input type="text" id="orangeForm-name1" class="form-control validate" placeholder="First Name">
+							<input type="text" id="firstname" class="form-control validate" placeholder="First Name" name="firstname" pattern="[a-zA-Z]{1,}" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name2" class="form-control validate" placeholder="Last Name">
+							<input type="text" id="lastname" class="form-control validate" placeholder="Last Name" name="lastname" pattern="[a-zA-Z]{1,}" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name3" class="form-control validate"
-								placeholder="E-mail Address">
+							<input type="email" id="emailid" class="form-control validate" name="emailid"
+								placeholder="E-mail Address" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name4" class="form-control validate"
-								placeholder="Date Of Birth">
+							<input type="datetime" id="dob" class="form-control validate" name="dob" max="2001-12-31" onfocus="(this.type='date')" onblur="(this.type='text')"
+								placeholder="Date Of Birth" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name5" class="form-control validate"
-								placeholder="Contact Number">
+							<input type="text" id="contactno" class="form-control validate" name="contactno" maxlength="10" minlength="10" pattern="[7-9]{1}[0-9]{9}"
+								placeholder="Contact Number" required>
 						</div>
 
-						<div class="md-form mb-5">
+						
+
+						<div class="md-form mb-2">
+								<i class="fa fa-user1"></i>
+								<select  id="state" class="custom-select" name="state" aria-placeholder="State" required>	
+									<option disabled selected>State</option>
+									<option value="gujrat">Gujrat</option>
+									
+								</select>
+							</div>
+
+
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name6" class="form-control validate" placeholder="State">
+							<select  id="district" class="custom-select" name="district" aria-placeholder="District" required>
+								<option disabled selected>District</option>
+								<option value="Ahmedabad"> Ahmedabad</option>
+								<option value="Vadodara"> Vadodara</option>
+								<option value="Dahod"> Dahod</option>
+								<option value="Panchmahal">Panchmahal</option>
+								<option value="Jamnagar"> Jamnagar</option>
+								<option value="Porbandar"> Porbandar</option>
+								<option value="Junagadh"> Junagadh</option>
+								<option value="Goa">Goa</option>
+								<option value="Patan">Patan</option>
+								<option value="Surat"> Surat</option>
+
+								
+							</select>
 						</div>
 
-						<div class="md-form mb-5">
+						
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name7" class="form-control validate" placeholder="District">
+							<input type="text" id="taluka" class="form-control validate" placeholder="Taluka" name="taluka" pattern="[a-zA-Z]{1,}" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name8" class="form-control validate" placeholder="Taluka">
+							<input type="text" id="pincode" class="form-control validate" placeholder="Pincode" pattern="[0-9]{6}" name="pincode" minlength="6" maxlength="6" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name9" class="form-control validate" placeholder="Pincode">
+							<input type="text" id="city" class="form-control validate " name="city" pattern="[a-zA-Z]{1,}" placeholder="City/Village" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name10" class="form-control validate"
-								placeholder="City/Village">
+							<input type="text" id="address" class="form-control validate" name="address" placeholder="Address" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name11" class="form-control validate" placeholder="Address">
+							<input type="text" id="shopno" class="form-control validate" name="shopno" placeholder="Shop No" pattern="[0-9]{4}" minlength="4" maxlength="4" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name12" class="form-control validate" placeholder="Shop No">
+							<input type="text" id="shopaddress" class="form-control validate" name="shopaddress"
+								placeholder="Shop Address" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name13" class="form-control validate"
-								placeholder="Shop Address">
+							<input type="text" id="aadharcard" class="form-control validate" name="aadharcard" pattern="^\d{4}\d{4}\d{4}$"  minlength="12" maxlength="12" 
+								placeholder="Aadharcard Number" required>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-2">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name14" class="form-control validate"
-								placeholder="Aadharcard Number">
-						</div>
-
-						<div class="md-form mb-5">
-							<i class="fa fa-user1"></i>
-							<select name="cars" class="custom-select">
+							<select  id="rationbooktype" class="custom-select" name="rationbooktype" required>
 								<option selected>Ration Book Type</option>
 								<option value="Red/Pink/Blue">Red/Pink/Blue</option>
 								<option value="Yellow">Yellow</option>
@@ -253,9 +283,9 @@
 							</select>
 						</div>
 
-						<div class="md-form mb-5">
+						<div class="md-form mb-4">
 							<i class="fa fa-user1"></i>
-							<select name="Number" class="custom-select" id="sel" onchange="func1()">
+							<select class="custom-select" id="sel" onchange="func1()" name="sel"  style="font-family: Verdana, Geneva, Tahoma, sans-serif;" required>
 								<option disabled selected>Family Member</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -283,8 +313,10 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile1" name="filename">
-									<label class="custom-file-label" for="customFile">Passbook size photo</label>
+								
+									<input type="file" class="custom-file-input" id="passbook" name="passbook"  required>
+									<label class="custom-file-label" for="customFile">passbook size photo</label>
+							
 								</div>
 							</div>
 						</div>
@@ -292,7 +324,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile2" name="filename">
+									<input type="file" class="custom-file-input" id="income" name="income" required>
 									<label class="custom-file-label" for="customFile">Income Certificate</label>
 								</div>
 							</div>
@@ -301,7 +333,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile3" name="filename">
+									<input type="file" class="custom-file-input" id="residential" name="residential" required>
 									<label class="custom-file-label" for="customFile">Residential Certificate</label>
 								</div>
 							</div>
@@ -310,7 +342,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile4" name="filename">
+									<input type="file" class="custom-file-input" id="cast" name="cast" required>
 									<label class="custom-file-label" for="customFile"> Cast Certificate</label>
 								</div>
 							</div>
@@ -319,8 +351,10 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile5" name="filename">
-									<label class="custom-file-label" for="customFile">Bank Passbook </label>
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="bank" name="bank" required>
+										<label class="custom-file-label" for="cu">Bank passbook</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -328,7 +362,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile6" name="filename">
+									<input type="file" class="custom-file-input" id="gas" name="gas" >
 									<label class="custom-file-label" for="customFile">Gas-Agency Certificate</label>
 								</div>
 							</div>
@@ -336,20 +370,22 @@
 
 						<div class="form-group row">
 							<div class="col-sm-12">
-								<div class="custom-file mb-3">
-									<input type="file" class="custom-file-input" id="customFile7" name="filename">
+								<div class="custom-file ">
+									<input type="file" class="custom-file-input" id="electricity" name="electricity" required>
 									<label class="custom-file-label" for="customFile">Letest Electricity Bill</label>
 								</div>
 							</div>
 						</div>
-						<div class="md-form mb-5">
+						<div class="md-form mb-4">
 							<i class="fa fa-user1"></i>
-							<input type="text" id="orangeForm-name	" class="form-control validate" placeholder="Password">
+							<input type="password" id="password" class="form-control validate" pattern="{8}" name="password" placeholder="Password" minlength="8" maxlength="8" required>
 						</div>
+
+						<!--for family database make hidden field-->
 					</div>
 
 					<div class="modal-footer d-flex justify-content-center">
-						<button class="btn btn-primary"><b> Register </b> </button>
+						<input type="submit" name="register" class="btn btn-primary" style="font-size: x-large; font-family: Arial, Helvetica, sans-serif;" value="Register">
 					</div>
 				</form>
 			</div>
@@ -357,22 +393,50 @@
 	</div>
 
 	<!-- Family Modal -->
-	<div class="modal fade " id="modalFamily" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="width: 100%">
+	<div class="modal fade " id="modalFamily" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="width: 100%" >
 		<div class="modal-dialog modal-lg" role="document" style="max-width:80%;">
 			<div class="modal-content">
 				<div class="modal-header text-center">
 					<h4 class="modal-title w-100 font-weight-bold">Family Member Details</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
 				</div>
-				<div class="form-inline" id="fam_members">
+				<div class="form-inline" id="fam_members" >
+			
 
 				</div>
 			</div>
 		</div>
 	</div>
+	{% if cre == "false"  or cre == ""%}
+	<script>
+		window.onload = function() {
+			window.alert(" Reregister your Document. WRONG CREDENTIAL")
+		};
+	</script>
+	{% endif %}
 
+	{% if cre == "hello"%}
+	<script>
+		window.onload = function() {
+			window.alert("wrong id and password")
+		};
+	</script>
+	{% endif %}
+
+	{% if cre == "both"%}
+	<script>
+		window.onload = function() {
+			window.alert("check your User ID and enter only your ID")
+		};
+	</script>
+	{% endif %}
+
+	<script>
+			$(".custom-file-input").on("change", function() {
+			var fileName = $(this).val().split("\\").pop();
+			$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+			});
+
+		</script>
 
 </body>
 

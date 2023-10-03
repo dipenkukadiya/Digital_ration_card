@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+   
 ]
 
 ROOT_URLCONF = 'website.urls'
@@ -76,9 +78,15 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME' : os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' :  'database1',
+        'PORT' : '3306',
+        'PASSWORD' : 'dipen',
+        'USER' : 'root'
+
+
     }
+
 }
 
 
@@ -123,3 +131,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATIC_URL = '/static/'
+
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT= 587
+EMAIL_HOST_USER ='trykuchbhi@gmail.com'
+EMAIL_HOST_PASSWORD ='TRYkuchbhi'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

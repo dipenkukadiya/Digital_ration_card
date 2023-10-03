@@ -1,0 +1,286 @@
+{% load static %}
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/favicon.ico'  %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'styles/pro.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-webfont.woff2' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrapp.min.css' %}">
+
+
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/star-rating.min.js' %}"></script>
+    <style>
+
+
+
+			.dropdown .dropbtn {
+			  font-size: 16px;
+			  border: none;
+			  outline: none;
+			  color: white;
+			  padding: 14px 16px;
+			  background-color: inherit;
+			  font-family: inherit;
+			  margin: 0;
+			}
+
+
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #f9f9f9;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			}
+
+			.dropdown-content a {
+			  float: none;
+			  color: black;
+			  padding: 12px 16px;
+			  text-decoration: none;
+			  display: block;
+			  text-align: left;
+			}
+
+			.dropdown-content a:hover {
+			  background-color: #ddd;
+			}
+
+			.dropdown:hover .dropdown-content {
+			  display: block;
+			}
+
+    </style>
+
+
+    <script>
+		$(document).ready(function() {
+		jQuery("#div2 ul li").append("<hr />");
+		});
+
+
+    </script>
+</head>
+
+<body style="background-image: linear-gradient(160deg, orange,white 30%, green);">
+
+<nav class="navbar navbar-expand-md bg-primary navbar-dark" style="background-color:#0b1f35!important;">
+    <img src="{% static 'images/logo.png' %}" class="logo">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto" style="float: right;">
+
+            <a href="http://127.0.0.1:8000/home/" class="nav-item nav-link"
+               style="font-size:20px; margin-right: 40px; color:mediumvioletred;font-size:20; font-family: Arial, Helvetica, sans-serif;"
+               onMouseOver="this.style.color='blue'"
+               onMouseOut="this.style.color='mediumvioletred'"><b>Update</b></a>
+
+               <a href="http://127.0.0.1:8000/tokon_home/" class="nav-item nav-link"
+					style="font-size:20px; margin-right: 40px; color:mediumvioletred;font-size:20; font-family:
+					Arial, Helvetica, sans-serif; " onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Take A Token</b></a>
+               
+            <div class="dropdown">
+                <button class="dropbtn" style="font-size:20px; margin-right:40px ;
+                font-family: Arial, Helvetica, sans-serif; color:mediumvioletred;padding-right: 5px;font-family: Arial, Helvetica, sans-serif; padding-top: 5px;padding-left: 5px;padding-bottom: 5px;"
+                        onMouseOver="this.style.color='blue'"
+                        onMouseOut="this.style.color='mediumvioletred'"><b>Ration</b>
+                </button>
+                <div class="dropdown-content">
+
+                    <a href="http://127.0.0.1:8000/ration_record/" class="nav-item nav-link"
+                       style="font-size:17px; color:red ; font-family: Arial, Helvetica, sans-serif;"
+                       onMouseOver="this.style.color='blue'"
+                       onMouseOut="this.style.color='red'"><b>Ration Record</b></a>
+
+                    <a href="http://127.0.0.1:8000/ration/" class="nav-item nav-link"
+                       style="font-size:17px; color:red; font-family: Arial, Helvetica, sans-serif;"
+                       onMouseOver="this.style.color='blue'"
+                       onMouseOut="this.style.color='red'"><b>Ration Check</b></a>
+                </div>
+            </div>
+            <a href="http://127.0.0.1:8000/profile/" class="nav-item nav-link"
+               style="font-size: 20px; margin-right: 40px; color: mediumvioletred; font-family: Arial, Helvetica, sans-serif;"
+               onMouseOver="this.style.color='blue'"
+               onMouseOut="this.style.color='mediumvioletred'"><b>Profile</b></a>
+            <a href="http://127.0.0.1:8000/feedback/" class="nav-item nav-link"
+               style="font-size: 20px; margin-right: 40px; color:mediumvioletred; font-family: Arial, Helvetica, sans-serif;"
+               onMouseOver="this.style.color='blue'"
+               onMouseOut="this.style.color='mediumvioletred'"><b>Feedback</b></a>
+        </div>
+    </div>
+</nav>
+<style>
+      .form-control {
+        width: 35%;
+      }
+
+      .table>tbody>tr>td {
+        padding-left: 5%;
+      }
+
+      .table>thead>tr>th {
+        padding-left: 5%;
+      }
+
+      .table>tbody>tr>td>input {
+        width: 80%;
+      }
+      #vr:hover{
+        color: blue;
+
+      }
+
+</style>
+
+
+<h2 style="text-align: center; color:currentColor; font-family: inherit ; font-size: 30px;" ><b>For Token Number, Ration Entry</b></h2>
+
+<h1>{{ tokon_t }}</h1>
+
+<form action="/tokon/" method="POST" class="was-validated">
+    {% csrf_token %}
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div class="form-group" style="margin-bottom: 100px; margin-left: 350px;">
+            <h4><label  id="aadharno">Aadharcard No :</label></h4>
+                <input  style="width: 350px;" type="text" class="form-control" id="aadharnoo" placeholder="Enter Aadharcard Number" name="aadharnoo"pattern="^\d{4}\d{4}\d{4}$" minlength="12" maxlength="12" required>
+
+          </div>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style=" padding-left: 5px; color: mediumvioletred">Serial no.</th>
+                <th style="color: mediumvioletred;">Product</th>
+                <th style="color: mediumvioletred;" >Weight (kg.)</th>
+                <th style="color: mediumvioletred;">Price (Rs/kg)</th>
+            </tr>
+            </thead>
+
+             <tr>
+                <td><input type="number" class="serial" name="serial1" value="1" readonly="readonly" style="width: 50px" ></td>
+                <td><input id="product" name="product1" class="product"  readonly="rea donly"
+                           value="sugar"  style="width: 200px ; height: 28px;" > </td>
+
+                <td><input type="number" class="weight" name="weight1"  min="1" max="10"  ></td>
+                <td><input type="number" class="price" name="price1" value="{{price.sugar}}" readonly="readonly" ></td>
+             </tr>
+             <tr>
+                <td><input type="number" class="serial" name="serial2" value="2" readonly="readonly" style="width: 50px" ></td>
+                <td><input id="product" name="product2" class="product" value="oil" readonly="readonly"  style="width: 200px ; height: 28px;" ></td>
+                <td><input type="number" class="weight" name="weight2" min="1" max="10" ></td>
+                <td><input type="number" class="price" name="price2" value="{{price.oil}}" readonly="readonly" ></td>
+             </tr>
+             <tr>
+                <td><input type="number" class="serial" name="serial3" value="3" readonly="readonly" style="width: 50px" ></td>
+                <td><input id="product" name="product3" class="product" readonly="readonly" value= "corn"
+                           style="width: 200px ; height: 28px;" ></td>
+                <td><input type="number" class="weight" name="weight3"   min="1" max="10"></td>
+                <td><input type="number" class="price" name="price3" value="{{price.corn}}" readonly="readonly" ></td>
+             <tr>
+                <td><input type="number" class="serial" name="serial4" value="4" readonly="readonly" style="width: 50px" ></td>
+                <td><input id="product" name="product4" class="product" value="dal" readonly="readonly" style="width: 200px ; height: 28px;" ></td>
+                <td><input type="number" class="weight" name="weight4"  min="1" max="10" ></td>
+                <td><input type="number" class="price" name="price4" value="{{price.dal}}" readonly="readonly" ></td>
+             </tr>
+             <tr>
+                <td><input type="number" class="serial" name="serial5" value="5" readonly="readonly" style="width: 50px" ></td>
+                <td><input id="product" name="product5" class="product" value="rice" readonly="rea donly"
+                           style="width: 200px ; height: 28px;" ></td>
+                <td><input type="number" class="weight" name="weight5"  min="1" max="10" ></td>
+                <td><input type="number" class="price" name="price5" value="{{price.rice}}" readonly="readonly" ></td>
+             </tr>
+             <tr>
+                <td><input type="number" class="serial" name="serial6" value="6" readonly="readonly" style="width: 50px" ></td>
+                <td><input id="product" name="product6" class="product" value="salt" readonly="rea donly"
+                           style="width: 200px ; height: 28px;" ></td>
+                <td><input type="number" class="weight" name="weight6"  min="1" max="10" ></td>
+                <td><input type="number" class="price" name="price6" value="{{price.salt}}" readonly="readonly" ></td>
+             </tr>
+             <tr>
+                <td><input type="number" class="serial" name="serial7" value="7" readonly="readonly" style="width: 50px" ></td>
+                <td><input id="product" name="product7" class="product" value="wheat" readonly="rea donly"
+                           style="width: 200px ; height: 28px;" ></td>
+                <td><input type="number" class="weight" name="weight7"  min="1" max="10"></td>
+                <td><input type="number" class="price" name="price7" value="{{  price.wheat}}" readonly="readonly" ></td>
+             </tr>
+
+            <table style="width: 350px; height: 20px;" ;>
+                <tr>
+                    <td>
+                        <label style="font-style: normal; color:tomato; font-family: Arial, Helvetica, sans-serif;"> <b>
+                            <h3> Total Bill :-</b> </h3> </label>
+                    </td>
+                    <td>
+                        <input type="text" id="bill" class="bill" name="bill" readonly="readonly"
+                               style="font-family: Arial, Helvetica, sans-serif; color: darkred;">
+                    </td>
+                </tr>
+            </table>
+        </table>
+        <div style="vertical-align: middle;">
+            <input type="button" class="btn btn-primary" name="bttn"
+                   style="margin-bottom: 120px; margin-left: 300px; color: yellow; font-family: Arial, Helvetica, sans-serif; font-size: large;"
+                   id="bttn" onclick="billq()" value="Make A Bill">
+
+            <input type="submit" class="btn btn-primary" name="btnsub"
+                   style="margin-bottom: 120px; margin-left: 150px; color: yellow; font-family: Arial, Helvetica, sans-serif; font-size: large;"
+                   id="btnsub" value="Get Token" onclick="fun()">
+        </div>
+    </div>
+
+
+</form>
+<script>
+      function billq() {
+
+        var d = document.getElementsByClassName("price");
+        var p = document.getElementsByClassName("weight");
+        var c=0
+        for(var i=0; i<d.length;i++){
+          if(parseInt(d[i].value)>0 && parseInt(p[i].value)>0){
+          c = parseInt(d[i].value)*parseInt(p[i].value)+c
+          }
+        }
+        console.log(parseInt(c))
+
+        document.getElementById("bill").value = c;
+
+      }
+</script>
+<footer class="bg-dark foot">
+    <div class="footer-copyright text-center py-1 text-white"><i class="material-icons"
+                                                                 style="font-size:15px; color: orange;">&#xe0be;&nbsp; </i><label
+            style="color: orange; font-family: Arial, Helvetica, sans-serif;"> name.company@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</label><i
+            class="material-icons" style="font-size:15px; color: orange;">&#xe0b0;&nbsp; </i><label
+            style="color: orange; font-family: Arial, Helvetica, sans-serif;">1234567890</label></div>
+    <!--<div class="footer-copyright text-center py-1 text-white">contact :- 1234567890s</div>-->
+    <div class="footer-copyright text-center py-1 text-white"><label style="font-family: Arial, Helvetica, sans-serif; color: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright Reserved ©2019 </label></div>
+</footer>
+
+</body>
+
+
+</html>
+
+

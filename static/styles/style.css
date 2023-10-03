@@ -1,23 +1,31 @@
-.logo{
-    height: 5%;
-    width: 5%;
+.logo {
+height :5%;
+width :5%;
 }
+#but{
+background-color : blue;
+color: white;
+font-size: 12px;}
+
+
 
 .carousel-inner img {
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 }
-.modal-contact {
-  align-content:Left;
- 
-}
+
 .modal{
   overflow: auto !important;
 }
 
-#but{
-background-color : blue;
-color: white;
-font-size: 12px;s
-
+.modal-contact {
+  align-content:Left;
 }
+
+footer{
+ height: 80px;
+ width: 100%;
+ bottom: 0;
+ position: relative;
+}
+

@@ -1,0 +1,168 @@
+{% load static %}
+
+<html>
+
+<head>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="{% static 'styles/pro.css' %}" >
+	<link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/fontawesome-webfont.woff2' %}">
+
+
+	<link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'styles/bootstrapp.min.css' %}">
+
+
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/star-rating.min.js' %}"></script>
+
+
+	<script>
+		$(document).ready(function() {
+		jQuery("#div2 ul li").append("<hr/>");
+		});
+
+	</script>
+	<script>
+		function refresh_token(){
+		  $.ajax({
+			method: "GET",
+			url: "{% url 'update_tok' %}",
+			data: "",
+			//dataType: "json",
+			success: function (data) {
+			  console.log(data)
+			  $('#tokon').text(data["tok"])
+
+			},
+			error: function(err){
+			   console.log(err)
+			}
+		  });
+     }
+     setInterval(refresh_token, 5000);
+	</script>
+	<script>
+		function myfunction(){
+			$.ajax({
+			method: "GET",
+			url: "{% url 'ration_next' %}",
+			data: "",
+			//dataType: "json",
+			success: function (data) {
+			  console.log(data)
+			},
+			error: function(err){
+			   console.log(err)
+			}
+		  });
+		}
+
+	</script>
+
+	<style>
+
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+		</style>
+</head>
+
+<body style="background-image: linear-gradient(160deg, orange,white 30%, green);">
+	<nav class="navbar navbar-expand-md bg-primary navbar-dark" style="background-color:#0b1f35!important;">
+
+		<img src="{% static 'images/logo.png' %}" class="logo">
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarCollapse" >
+			<div class="navbar-nav ml-auto" style="float: right;">
+				
+
+				<a href="http://127.0.0.1:8000/home/" class="nav-item nav-link"
+					style="font-size:20px; margin-right: 40px; color:mediumvioletred;font-size:20; font-family:
+					Arial, Helvetica, sans-serif; " onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Update</b></a>
+
+					<a href="http://127.0.0.1:8000/tokon_home/" class="nav-item nav-link"
+					style="font-size:20px; margin-right: 40px; color:mediumvioletred;font-size:20; font-family:
+					Arial, Helvetica, sans-serif; " onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Take A Token</b></a>
+
+				<div class="dropdown">
+					<button class="dropbtn" style="font-size:20px;font-family: Arial, Helvetica, sans-serif; margin-right:40px ;color:mediumvioletred;padding-right: 5px;padding-top: 5px;padding-left: 5px;padding-bottom: 5px;" onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color ='mediumvioletred'"><b>Ration</b>
+
+					</button>
+					<div class="dropdown-content">
+
+						<a href="http://127.0.0.1:8000/ration_record/" class="nav-item nav-link"
+						style="font-size:17px; color:red ; font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue' "
+						onMouseOut="this.style.color='red'"><b>Ration Record</b></a>
+
+						<a href="http://127.0.0.1:8000/ration_next/" class="nav-item nav-link"
+							style="font-size:17px; color:red; font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue'"
+							onMouseOut="this.style.color='red'"><b>Ration Check</b></a>
+					</div>
+				</div>
+				<a href="http://127.0.0.1:8000/profile/" class="nav-item nav-link"
+					style="font-size: 20px; margin-right: 40px; color: mediumvioletred; font-family: Arial, Helvetica, sans-serif;" onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color ='mediumvioletred'"><b>Profile</b></a>
+				<a href="http://127.0.0.1:8000/feedback/" class="nav-item nav-link"
+					style="font-size: 20px; margin-right: 40px; color: mediumvioletred; font-family: Arial, Helvetica, sans-serif;"  onMouseOver="this.style.color='blue'"
+					onMouseOut="this.style.color='mediumvioletred'"><b>Feedback</b></a>
+			</div>
+		</div>
+	</nav>
+    <br><br><br>
+    <center>
+    <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30160.14879346355!2d72.868086684783!3d19.10683997476419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c874802d935d%3A0xdbac1ca92e5c1e7e!2sGovernment%20Ration%20Shop!5e0!3m2!1sen!2sin!4v1588096142759!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    </center>
+</body>
+</html>
